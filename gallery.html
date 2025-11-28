@@ -5,23 +5,83 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Gallery — Grace Community</title>
 <link rel="stylesheet" href="assets/style.css">
+<style>
+  /* Photojournal Masonry Gallery */
+  .masonry {
+    column-count: 3;
+    column-gap: 0;
+  }
+  .photo {
+    width: 100%;
+    display: block;
+    margin-bottom: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    break-inside: avoid;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+  @keyframes fadeIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
+
+  /* Variable heights for a journal-like effect */
+  .h1 { height: 50vh; }
+  .h2 { height: 60vh; }
+  .h3 { height: 70vh; }
+  .h4 { height: 55vh; }
+
+  @media(max-width:879px) {
+    .masonry { column-count: 2; }
+  }
+  @media(max-width:639px) {
+    .masonry { column-count: 1; }
+  }
+</style>
 </head>
 <body>
 <header class="site-header">
-<div class="wrap nav-row">
-<div class="brand"><div class="logo">G</div><div><h1>Grace Community</h1></div></div>
-<nav><ul><li><a href="index.html">Home</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="admin-login.html">Admin</a></li></ul></nav>
-</div>
+  <div class="wrap nav-row">
+    <div class="brand"><div class="logo">G</div><div><h1>Grace Community</h1></div></div>
+    <nav><ul><li><a href="index.html">Home</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="admin-login.html">Admin</a></li></ul></nav>
+  </div>
 </header>
 
-
 <main class="wrap">
-<h2>Gallery</h2>
-<div id="galleryGrid" class="media-row"></div>
+  <h2>Photo Journal</h2>
+  <div class="masonry" id="galleryGrid">
+    <!-- Gallery photos will be dynamically loaded here -->
+  </div>
 </main>
 
+<footer>
+  <div class="wrap footer-grid">
+    <div class="small muted">© <span id="year"></span> Grace Community Church</div>
+  </div>
+</footer>
 
-<footer><div class="wrap footer-grid"><div class="small muted">© <span id="year"></span> Grace Community Church</div></div></footer>
 <script src="assets/script.js"></script>
+<script>
+  // Placeholder photos (Unsplash)
+  const placeholderImages = [
+    'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee',
+    'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
+    'https://images.unsplash.com/photo-1519681393784-d120267933ba',
+    'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e',
+    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05',
+    'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
+    'https://images.unsplash.com/photo-1503264116251-35a269479413',
+    'https://images.unsplash.com/photo-1487412912498-0447578fcca8',
+    'https://images.unsplash.com/photo-1535930749574-1399327ce78f',
+    'https://images.unsplash.com/photo-1452570053594-1b985d6ea890'
+  ];
+
+  const gallery = document.getElementById('galleryGrid');
+  placeholderImages.forEach((url, i) => {
+    const div = document.createElement('div');
+    div.className = 'photo h' + ((i % 4) + 1);
+    div.style.backgroundImage = `url('${url}')`;
+    gallery.appendChild(div);
+  });
+</script>
 </body>
 </html>
