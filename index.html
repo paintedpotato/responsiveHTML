@@ -1,141 +1,183 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Grace Community Church</title>
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Grace Community Church</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* Card image styling */
+.card img, .card video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+}
+.photojournal-photo {
+  height: 200px;
+  margin-bottom: 0.75rem;
+  border-radius: 12px;
+  object-fit: cover;
+  width: 100%;
+}
+</style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="wrap nav-row">
-      <div class="brand">
-        <div class="logo">G</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="wrap nav-row">
+    <div class="brand">
+      <div class="logo">G</div>
+      <div>
+        <h1>Grace Community</h1>
+        <div class="small muted">A place to belong</div>
+      </div>
+    </div>
+    <nav>
+      <button class="nav-toggle" id="navToggle">☰</button>
+      <ul id="mainNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="#connect">Connect</a></li>
+        <li><a href="admin-login.html">Admin</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-card">
+    <h2>Welcome to Grace Community Church</h2>
+    <p class="muted">Join us for worship, community, and spiritual growth.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="sermons.html">Sermons</a>
+      <a class="btn btn-ghost" href="gallery.html">Gallery</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="About Us">
+    <h3>About Us</h3>
+    <p class="muted">Grace Community Church exists to love God and our neighbors...</p>
+  </div>
+</section>
+
+<!-- MINISTRIES -->
+<section id="ministries">
+  <h2>Our Ministries</h2>
+  <div class="min-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Children & Youth">
+      <h3>Children & Youth</h3>
+      <p class="muted">Safe spaces for children...</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Small Groups">
+      <h3>Small Groups</h3>
+      <p class="muted">Weekly groups for study...</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="Outreach">
+      <h3>Outreach</h3>
+      <p class="muted">Programs supporting food distribution...</p>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events">
+  <h2>Upcoming Events</h2>
+  <div class="grid-3">
+    <div class="card events">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Community Outreach">
+      <div class="event">
+        <div class="date">12 Dec</div>
         <div>
-          <h1>Grace Community</h1>
-          <div class="small muted">A place to belong</div>
+          <strong>Community Outreach</strong>
+          <div class="muted small">Food distribution</div>
         </div>
       </div>
-      <nav>
-        <button class="nav-toggle" id="navToggle">☰</button>
-        <ul id="mainNav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="sermons.html">Sermons</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="#connect">Connect</a></li>
-          <li><a href="admin-login.html">Admin</a></li>
-        </ul>
-      </nav>
     </div>
-  </header>
-
-  <!-- MAIN CONTENT -->
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-card">
-        <h2>Welcome to Grace Community Church</h2>
-        <p class="muted">Join us for worship, community, and spiritual growth.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="sermons.html">Sermons</a>
-          <a class="btn btn-ghost" href="gallery.html">Gallery</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="card">
-        <h3>About Us</h3>
-        <p class="muted">Grace Community Church exists to love God and our neighbors...</p>
-      </div>
-    </section>
-
-    <!-- MINISTRIES -->
-    <section id="ministries">
-      <h2>Our Ministries</h2>
-      <div class="min-grid">
-        <div class="card"><h3>Children & Youth</h3><p class="muted">Safe spaces for children...</p></div>
-        <div class="card"><h3>Small Groups</h3><p class="muted">Weekly groups for study...</p></div>
-        <div class="card"><h3>Outreach</h3><p class="muted">Programs supporting food distribution...</p></div>
-      </div>
-    </section>
-
-    <!-- PHOTOJOURNAL TEASER -->
-    <section id="photojournal">
-      <h2>Photojournal Highlights</h2>
-      <div class="masonry" id="photojournalGrid" style="margin-bottom:2rem;"></div>
-    </section>
-
-    <!-- EVENTS -->
-    <section id="events">
-      <h2>Upcoming Events</h2>
-      <div class="grid-3">
-        <div class="card events">
-          <div class="event">
-            <div class="date">12 Dec</div>
-            <div>
-              <strong>Community Outreach</strong>
-              <div class="muted small">Food distribution</div>
-            </div>
-          </div>
-        </div>
-        <div class="card"><h3>Volunteer</h3><p class="muted">Serve on the hospitality team.</p></div>
-        <div class="card"><h3>Latest Sermon</h3><p class="muted">Missed last Sunday? Listen on the Sermons page.</p></div>
-      </div>
-    </section>
-
-    <!-- CONNECT -->
-    <section id="connect">
-      <h2>Connect With Us</h2>
-      <div class="grid-3">
-        <div class="card contact-form">
-          <h3>Contact</h3>
-          <form id="contactForm" onsubmit="return false;">
-            <input placeholder="Name" />
-            <input placeholder="Email" />
-            <textarea placeholder="Message"></textarea>
-            <div style="display:flex;gap:.5rem;margin-top:.5rem">
-              <button class="btn btn-primary">Send</button>
-              <button class="btn btn-ghost">Reset</button>
-            </div>
-          </form>
-        </div>
-        <div class="card"><h3>Office</h3><p class="muted">123 Hope Street</p></div>
-        <div class="card"><h3>Social</h3><p class="muted">Follow us</p></div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap footer-grid">
-      <div class="small muted">© <span id="year"></span> Grace Community Church</div>
-      <div class="small muted">Privacy • Terms</div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Volunteer">
+      <h3>Volunteer</h3>
+      <p class="muted">Serve on the hospitality team.</p>
     </div>
-  </footer>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503264116251-35a269479413" alt="Latest Sermon">
+      <h3>Latest Sermon</h3>
+      <p class="muted">Missed last Sunday? Listen on the Sermons page.</p>
+    </div>
+  </div>
+</section>
 
-  <script src="assets/script.js"></script>
-  <script>
-    // Placeholder photojournal teaser images
-    const teaserImages = [
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee',
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
-      'https://images.unsplash.com/photo-1519681393784-d120267933ba',
-      'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e',
-      'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05',
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330'
-    ];
+<!-- CONNECT -->
+<section id="connect">
+  <h2>Connect With Us</h2>
+  <div class="grid-3">
+    <div class="card contact-form">
+      <h3>Contact</h3>
+      <form id="contactForm" onsubmit="return false;">
+        <input placeholder="Name" />
+        <input placeholder="Email" />
+        <textarea placeholder="Message"></textarea>
+        <div style="display:flex;gap:.5rem;margin-top:.5rem">
+          <button class="btn btn-primary">Send</button>
+          <button class="btn btn-ghost">Reset</button>
+        </div>
+      </form>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d" alt="Office">
+      <h3>Office</h3>
+      <p class="muted">123 Hope Street</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb" alt="Social Media">
+      <h3>Social</h3>
+      <p class="muted">Follow us</p>
+    </div>
+  </div>
+</section>
 
-    const pjGrid = document.getElementById('photojournalGrid');
-    teaserImages.forEach((url, i) => {
-      const div = document.createElement('div');
-      div.className = 'photo h' + ((i % 4) + 1);
-      div.style.backgroundImage = `url('${url}')`;
-      pjGrid.appendChild(div);
-    });
-  </script>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap footer-grid">
+    <div class="small muted">© <span id="year"></span> Grace Community Church</div>
+    <div class="small muted">Privacy • Terms</div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+<script>
+// Photojournal placeholders
+const photojournalImages = [
+  'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e',
+  'https://images.unsplash.com/photo-1519681393784-d120267933ba',
+  'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
+  'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05',
+  'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
+  'https://images.unsplash.com/photo-1503264116251-35a269479413'
+];
+const pjGrid = document.getElementById('photojournalGrid');
+photojournalImages.forEach((url, i) => {
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.innerHTML = `<img class="photojournal-photo" src="${url}" alt="Photojournal ${i+1}">`;
+  pjGrid.appendChild(div);
+});
+</script>
+
 </body>
 </html>
-
