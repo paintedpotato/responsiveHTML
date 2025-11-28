@@ -1,30 +1,30 @@
+```
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Admin Panel — Grace Community</title>
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Panel — Grace Community</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<main class="wrap" style="max-width:900px;margin:2rem auto;">
-<h2>Admin Panel</h2>
-<p class="muted small">Add gallery photos or sermon notes.</p>
+  <main class="wrap" style="max-width:900px;margin:2rem auto;">
+    <h2>Admin Panel</h2>
+    <p class="muted small">Add gallery photos or sermon notes.</p>
 
+    <form id="postForm">
+      <select id="postType"><option value="gallery">Gallery Photo</option><option value="sermon">Sermon Note</option></select>
+      <input id="postTitle" placeholder="Title" required />
+      <input id="postImage" type="file" accept="image/*" />
+      <textarea id="postContent" rows="4" placeholder="Content (optional)"></textarea>
+      <div style="display:flex;gap:.5rem;margin-top:.5rem"><button class="btn btn-primary">Publish</button><a class="btn btn-ghost" href="index.html">Preview</a></div>
+      <div id="postNotice" class="small muted" style="margin-top:.5rem;display:none"></div>
+    </form>
 
-<form id="postForm">
-<select id="postType"><option value="gallery">Gallery Photo</option><option value="sermon">Sermon Note</option></select>
-<input id="postTitle" placeholder="Title" required />
-<input id="postImage" type="file" accept="image/*" />
-<textarea id="postContent" rows="4" placeholder="Content (optional)"></textarea>
-<div style="display:flex;gap:.5rem;margin-top:.5rem"><button class="btn btn-primary">Publish</button><a class="btn btn-ghost" href="index.html">Preview</a></div>
-<div id="postNotice" class="small muted" style="margin-top:.5rem;display:none"></div>
-</form>
-
-
-<h3 style="margin-top:1.25rem">Manage Posts</h3>
-<div id="postList"></div>
-</main>
-<script src="assets/script.js"></script>
+    <h3 style="margin-top:1.25rem">Manage Posts</h3>
+    <div id="postList"></div>
+  </main>
+  <script src="assets/script.js"></script>
 </body>
 </html>
+
