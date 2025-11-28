@@ -25,3 +25,4 @@ nav a{text-decoration:none;color:inherit;padding:.5rem;border-radius:8px}
 @media(min-width:640px){.hero{grid-template-columns:1fr 420px}}
 @media(min-width:880px){.grid-3{grid-template-columns:repeat(3,1fr)}.min-grid{grid-template-columns:repeat(3,1fr)}.media-row{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:879px){nav ul{display:none}}
+
